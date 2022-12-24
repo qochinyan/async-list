@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import "./list.scss";
 import Item from "./item/item";
 
@@ -15,19 +16,20 @@ const List = () => {
       },
     ]);
   }
+
   useEffect(() => {
-      for (let el of data) {
-      if ((countNulls == data.length)) {
-        setData([]);
-        setCountNulls(0);
-      }
+    if (countNulls == data.length) {
+      setData([]);
+      setCountNulls(0);
     }
   }, [countNulls]);
-  function deleteById(id) {
+
+  function deleteByIndex(index) {
     let newData = [...data];
-    newData[id] = { id: null, time: null };
+    newData[index] = { id: null, time: null };
     setData(newData);
   }
+
   return (
     <div className="list-container">
       <button onClick={handleItemAdd} className="item--adder">
@@ -39,7 +41,7 @@ const List = () => {
             setCountNulls={setCountNulls}
             countNulls={countNulls}
             setData={setData}
-            deleteById={deleteById}
+            deleteByIndex={deleteByIndex}
             data={data}
             el={el}
             key={i + ""}

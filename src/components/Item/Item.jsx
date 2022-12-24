@@ -1,16 +1,16 @@
-import "./item.scss";
 import { useEffect, useState } from "react";
 
-const Item = ({setCountNulls,countNulls, el, setData, data, deleteById }) => {
-  //
+import "./item.scss";
+
+const Item = ({setCountNulls, el, deleteByIndex }) => {
+
   const [open, setOpen] = useState(true);
   const [time, setTime] = useState(el.time ?? 0);
-
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       if (time < 1) {
-        deleteById(el.id);
+        deleteByIndex(el.id);
         setOpen(false);
         setCountNulls(countNulls=>countNulls+1)
       } else {
@@ -19,7 +19,6 @@ const Item = ({setCountNulls,countNulls, el, setData, data, deleteById }) => {
       clearTimeout(timeout);
     }, 1000);
   }, [time]);
-
   return (
     <div className="item-container" style={{ display: open ? "flex" : "none" }}>
       <span className="item-index">
