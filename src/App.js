@@ -1,9 +1,10 @@
 import './App.scss';
-import AsyncList from './components/asyncList/AsyncList'; 
+import List from "./Components/list"
+
 function App() {
   return (
     <div className="App">
-      <AsyncList/>
+      <List/>
     </div>
   );
 }

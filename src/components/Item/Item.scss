@@ -9,7 +9,8 @@
   justify-content: space-between;
   padding: 0px 5px;
   .item-index {
-    display: flex;align-items: center;
+    display: flex;
+    align-items: center;
     width: 14%;
     justify-content: space-between;
     color: rgba(255, 0, 55, 0.829);
@@ -17,11 +18,11 @@
       width: 30px;
     }
   }
-  .item-removing--time{
+  .item-removing--time {
     color: rgba(255, 38, 0, 0.888);
   }
-  transition: .2s cubic-bezier(0.95, 0.05, 0.795, 0.035);
-  &:hover{
-    opacity: .8;
+  transition: 0.2s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  &:hover {
+    opacity: 0.8;
   }
 }
